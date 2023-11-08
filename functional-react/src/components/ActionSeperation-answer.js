@@ -7,8 +7,10 @@ function random(max) {
 export default function ActionSeperation() {
   const [randNum, setRandNum] = useState(0);
 
+  const max = 10;
+
   const handleRandNum = () => {
-    const nextRandNum = random(10);
+    const nextRandNum = random(max);
     setRandNum(nextRandNum);
   }
 
