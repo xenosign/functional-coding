@@ -1,8 +1,7 @@
 /* 문제 1 */
-
-// function update_tax_dom() {
-//   set_tax_dom(shopping_cart_total* 0.1);
-// };
+function update_tax_dom() {
+  set_tax_dom(shopping_cart_total * 0.1);
+}
 
 // 풀이
 const shopping_cart_total = 100;
@@ -15,7 +14,6 @@ function update_tax_dom() {
 function calculate_tax(total) {
   return total * 0.1;
 }
-
 
 /* 문제 2 */
 function update_shipping_icons() {
@@ -47,7 +45,4 @@ function update_shipping_icons() {
 
 function decide_shpping_icon(item_price, total) {
   return item_price + total >= 20;
-};
-
-
-
+}
