@@ -45,7 +45,7 @@ function update_shipping_icons() {
     const item = button.item;
 
     // 주문 결과를 계산하여 cart 인자로 전달하자
-    const new_cart = add_item(shopping_cart, { item.price, item.name })
+    const new_cart = add_item(shopping_cart, { price: item.price, name: item.name })
 
     const factor = decide_shpping_icon(new_cart);
     if (factor) return button.show_free_shipping_icon();

@@ -24,7 +24,7 @@ function update_shipping_icons(cart) {
     const button = buy_buttons[i];
     const item = button.item;
 
-    const new_cart = add_item(cart, { item.price, item.name })
+    const new_cart = add_item(cart, { price: item.price, name: item.name })
 
     const factor = decide_shpping_icon(new_cart);
     if (factor) return button.show_free_shipping_icon();
@@ -79,7 +79,7 @@ function update_shipping_icons(cart) {
     const button = buy_buttons[i];
     const item = button.item;
 
-    const new_cart = add_item(cart, { item.price, item.name })
+    const new_cart = add_item(cart, { price: item.price, name: item.name })
 
     const factor = decide_shpping_icon(new_cart);
     if (factor) return button.show_free_shipping_icon();
