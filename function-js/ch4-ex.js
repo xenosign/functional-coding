@@ -30,6 +30,7 @@ function update_shipping_icons() {
   }
 }
 
+// 풀이
 function update_shipping_icons() {
   const buy_buttons = get_buy_buttons_dom();
 
