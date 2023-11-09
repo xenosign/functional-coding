@@ -24,7 +24,7 @@ function update_shipping_icons(cart) {
     const button = buy_buttons[i];
     const item = button.item;
 
-    const new_cart = add_item(cart, { price: item.price, name: item.name })
+    const new_cart = add_item(cart, { price: item.price, name: item.name });
 
     const factor = decide_shpping_icon(new_cart);
     if (factor) return button.show_free_shipping_icon();
@@ -48,7 +48,6 @@ function calc_total(cart) {
 function update_tax_dom() {
   set_tax_dom(calc_tax(shopping_cart_total));
 }
-
 
 // 풀이
 const shopping_cart_total = 1000;
@@ -79,7 +78,7 @@ function update_shipping_icons(cart) {
     const button = buy_buttons[i];
     const item = button.item;
 
-    const new_cart = add_item(cart, { price: item.price, name: item.name })
+    const new_cart = add_item(cart, { price: item.price, name: item.name });
 
     const factor = decide_shpping_icon(new_cart);
     if (factor) return button.show_free_shipping_icon();
@@ -103,7 +102,6 @@ function calc_total(cart) {
 function update_tax_dom(cart_total) {
   set_tax_dom(calc_tax(cart_total));
 }
-
 
 /* 문제 2 */
 // update_shipping_icons 분리하기
@@ -138,6 +136,7 @@ function update_shipping_icons(cart) {
     const isShown = decide_free_shpping_with_item(cart, item);
 
     // 변수에 따라 free 버튼을 추가하거나 감추는 함수
+    // 분기도 함수 내부에서 처리하도록 수정
     set_free_shipping_icon(button, isShown);
   }
 }
