@@ -115,6 +115,7 @@ function add_item(cart, item) {
 
 // 특수성을 가진 함수를 빼내서 일반적으로 사용할 수 있는 함수로 세분화
 function add_element_last(arr, el) {
+  // 값을 카피해서 전역 변수에 영향을 안미치도록 하기
   const new_arr = arr.slice();
   new_arr.push(el);
   return new_arr;
