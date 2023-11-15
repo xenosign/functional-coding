@@ -5,3 +5,9 @@ function sol() {
   return 0;
 }
 ```
+
+```py
+def sol() {
+  return 0
+}
+```
