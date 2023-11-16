@@ -1,6 +1,6 @@
-**_ CH5 _**
+# CH5
 
-# 문제 1
+#### 문제 1
 
 ```js
 const mailing_list = [];
