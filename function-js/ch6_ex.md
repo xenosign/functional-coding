@@ -189,7 +189,7 @@ function objectSet(obj, key, val) {
 # 의문점
 
 1. 배열에 담긴 객체에 값을 변경하는 경우, 배열 복사는 굳이 필요한가?
-   > 배열에 객체 데이터를 추가하거나, 삭제하는 경우가 아니라면 굳이 배열까지 복사를 해야하는가?
+   > 배열에 객체 데이터를 추가하거나, 삭제하는 경우가 아니라면 굳이 배열까지 복사를 해야하는가? 궁금한점
 
 ```js
 function setQuantityByName(cart, name, quantity) {
