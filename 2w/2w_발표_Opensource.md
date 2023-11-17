@@ -2,26 +2,26 @@
 
 1. 먼저 오픈 소스를 보자
 
-- https://github.com/facebook/react
+   > https://github.com/facebook/react
 
 2. pakage.json 보기
 
-- 가장 대표 명령어 찾기 "build" "start" 등등</br>
-- 해당 명령어가 실행시키는 파일 열어보기</br>
+   > 가장 대표 명령어 찾기 "build" "start" 등등</br>
+   > 해당 명령어가 실행시키는 파일 열어보기</br>
 
 3. 해당 파일 분석 시작!
 
-- 위에 모듈 불러오는 부분 / 상수 선언부 파악하기</br>
-- 중요 로직 보기</br>
-- 함수형 코딩은 지켜지고 있는가?</br>
+   > 위에 모듈 불러오는 부분 / 상수 선언부 파악하기</br>
+   > 중요 로직 보기</br>
+   > 함수형 코딩은 지켜지고 있는가?</br>
 
 ## 간단한 오픈 소스 보기
 
 https://www.npmjs.com/package/is-number</br>
 https://www.npmjs.com/package/pad-left
 
-- PR 혹은 Issue 확인하기
-- 해당 코드의 주석 확인하기
+> PR 혹은 Issue 확인하기
+> 해당 코드의 주석 확인하기
 
 ## Opensource 를 통해 얻을 수 있는 것
 
@@ -38,3 +38,4 @@ https://www.npmjs.com/package/pad-left
 - 해당 코드의 개선점 || 문제점을 찾아서 개선할 수 있는 능력
 
 => 이런 부분을 모두 어필을 할 수 있기에, 회사에서 싫어할리가 없다!
+=> 여유가 있을 때, 공부하면 좋을 것 같아요!
