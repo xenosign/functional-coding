@@ -1,4 +1,4 @@
-bnb# How to Opensource
+# How to Opensource
 
 1. 먼저 오픈 소스를 보자
 
@@ -14,7 +14,12 @@ bnb# How to Opensource
    > 중요 로직 보기</br>
    > 함수형 코딩은 지켜지고 있는가?</br>
 
-# Opensource 를 통해 얻을 수 있는 것
+## 간단한 오픈 소스 보기
+
+https://www.npmjs.com/package/is-number
+https://www.npmjs.com/package/pad-left
+
+## Opensource 를 통해 얻을 수 있는 것
 
 1. 코드 읽는 법과 능률 상승!
 2. 최신 스타일의 코드를 학습할 수 있다
