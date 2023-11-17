@@ -1,4 +1,4 @@
-b# How to Opensource
+# How to Opensource
 
 1. 먼저 오픈 소스를 보자
 
