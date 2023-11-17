@@ -1,4 +1,4 @@
-# How to Opensource
+bㅠ# How to Opensource
 
 1. 먼저 오픈 소스를 보자
 
@@ -16,8 +16,11 @@
 
 ## 간단한 오픈 소스 보기
 
-https://www.npmjs.com/package/is-number
+https://www.npmjs.com/package/is-number</br>
 https://www.npmjs.com/package/pad-left
+
+> PR 혹은 Issue 확인하기
+> 해당 코드의 주석 확인하기
 
 ## Opensource 를 통해 얻을 수 있는 것
 
