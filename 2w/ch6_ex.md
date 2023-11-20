@@ -134,7 +134,6 @@ function objectSet(obj, key, val) {
 #### 문제 8
 
 ```js
-const t1 = "Final";
 function setQuantity(item, new_quantity) {
   return objectSet(item, "quantity", new_quantity);
 }
