@@ -1,8 +1,3 @@
-# CH13, 함수형 도구 체이닝
-
-### 연습문제 1
-
-```js
 const { reduce } = require("lodash");
 
 const arr = [1, 2, 3, 4];
@@ -10,14 +5,11 @@ const objArr = [{ total: 1 }, { total: 2 }, { total: 3 }, { total: 4 }];
 
 // 수업 코드와 비슷하게 맞추기 위해 Lodash reduce 함수 사용, 인자 순서 다름
 function maxKey(arr, init, foo) {
-  return reduce(
-    arr,
-    function (max, el) {
-      if (foo(max) > foo(el)) return max;
-      return el;
-    },
-    init
-  );
+  return reduce(arr, function (max, el) {
+    if (foo(max) > foo(el))
+      return max;
+    return el;
+  }, init);
 }
 
 function max(arr, init) {
@@ -38,24 +30,16 @@ function maxJS(arr, init) {
   return maxKeyJS(arr, init, (x) => x);
 }
 
-console.log("Lodash max", max(arr, 0));
-console.log("JS max", maxJS(arr, 0));
+console.log('Lodash max', max(arr, 0));
+console.log('JS max', maxJS(arr, 0));
 
 // 객체 결과
 const MIN = { total: 0 };
-console.log(
-  "Lodash maxKey",
-  maxKey(objArr, MIN, (el) => el.total)
-);
-console.log(
-  "JS maxKey",
-  maxKeyJS(objArr, MIN, (el) => el.total)
-);
-```
+console.log('Lodash maxKey', maxKey(objArr, MIN, (el) => el.total));
+console.log('JS maxKey', maxKeyJS(objArr, MIN, (el) => el.total));
 
-### 연습문제 2
 
-```js
+// 연습문제 2
 function bigSpenders(customers) {
   const over100Customers = filter(customers, isOverHundred);
   const over100andPurchaseTwice = filter(over100Customers, isPurchaseMoreTwice);
@@ -69,31 +53,8 @@ function isOverHundred(customer) {
 function isPurchaseMoreTwice(customer) {
   return customer.purchases >= 2;
 }
-```
 
-### 연습문제3
-
-```js
-// js 버전
+// 연습문제 3
 function average(numbers) {
   return numbers.reduce((acc, cur) => acc + cur, 0) / numbers.length;
 }
-
-// 책 버전
-function average(numbers) {
-  return reduce(numbers, 0, sum) / numbers.length;
-}
-
-function sum(a, b) {
-  return a + b;
-}
-```
-
-### 연습문제 4
-
-```js
-function averagePurcahseTotals(customers) {
-  const customerPurchaseTotalArr = cutomers.map((cur, idx) => cur.total);
-  return average(customerPurchaseTotalArr);
-}
-```
