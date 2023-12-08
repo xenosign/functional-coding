@@ -92,78 +92,8 @@ console.log(originalArray);
 // 변경 후 배열 출력
 console.log(updatedArray);
 
-
-// 게시글 수정 api를 nestjs typescript 로.
-
-// 게시글 수정 요청을 처리하는 컨트롤러
-@Controller('posts')
-export class PostsController {
-  constructor(private readonly postsService: PostsService) {}
-
-  // 게시글 수정을 처리하는 핸들러
-  @Put(':id')
-  async updatePost(
-    @Param('id') id: string,
-    @Body() updatePostDto: UpdatePostDto,
-  ): Promise<Post> {
-    // 게시글 수정 서비스를 호출하여 게시글을 업데이트하고 업데이트된 게시글을 반환
-    return this.postsService.updatePost(id, updatePostDto);
-  }
-}
-
-// 게시글 수정을 처리하는 서비스
-@Injectable()
-export class PostsService {
-  constructor(
-    @InjectModel(Post.name) private readonly postModel: Model<PostDocument>,
-  ) {}
-
-  // 게시글을 업데이트하는 메소드
-  async updatePost(id: string, updatePostDto: UpdatePostDto): Promise<Post> {
-    // 업데이트할 게시글을 데이터베이스에서 찾음
-    const post = await this.postModel.findById(id);
-
-    // 게시글이 존재하지 않으면 예외를 발생시킴
-    if (!post) {
-      throw new NotFoundException('게시글을 찾을 수 없습니다.');
-    }
-
-    // 게시글의 내용을 업데이트
-    post.title = updatePostDto.title;
-    post.content = updatePostDto.content;
-
-    // 업데이트된 게시글을 저장하고 반환
-    return post.save();
-  }
-}
-
-// 게시글 업데이트에 사용되는 DTO (Data Transfer Object)
-export class UpdatePostDto {
-  @IsNotEmpty()
-  title: string;
-
-  @IsNotEmpty()
-  content: string;
-}
-
-// 게시글 모델
-export type PostDocument = Post & Document;
-
-@Schema()
-export class Post {
-  @Prop({ required: true })
-  title: string;
-
-  @Prop({ required: true })
-  content: string;
-}
-
-export const PostSchema = SchemaFactory.createForClass(Post);
-
-// 게시글 수정 api를 nestjs typescript 로.
-
 // express 모듈을 불러옴
-const express = require('express');
+const express = require("express");
 // express 앱을 생성
 const app = express();
 // body-parser 미들웨어를 사용하여 요청의 body를 파싱
@@ -179,20 +109,22 @@ const updatePostHandler = (req, res) => {
   // 게시글 id와 수정할 내용이 모두 제공되었는지 확인
   if (!postId || !updatedContent) {
     // 필수 정보가 누락된 경우, 400 Bad Request 응답을 보냄
-    return res.status(400).json({ error: '게시글 id와 수정할 내용을 모두 제공해야 합니다.' });
+    return res
+      .status(400)
+      .json({ error: "게시글 id와 수정할 내용을 모두 제공해야 합니다." });
   }
 
   // 게시글 수정 로직을 구현
   // ...
 
   // 게시글 수정이 성공적으로 완료되었을 경우, 200 OK 응답을 보냄
-  res.status(200).json({ message: '게시글 수정이 완료되었습니다.' });
+  res.status(200).json({ message: "게시글 수정이 완료되었습니다." });
 };
 
 // POST /api/posts/update 라우트에 게시글 수정 핸들러 함수를 등록
-app.post('/api/posts/update', updatePostHandler);
+app.post("/api/posts/update", updatePostHandler);
 
 // 서버를 3000 포트에서 실행
 app.listen(3000, () => {
-  console.log('서버가 3000 포트에서 실행되었습니다.');
+  console.log("서버가 3000 포트에서 실행되었습니다.");
 });
