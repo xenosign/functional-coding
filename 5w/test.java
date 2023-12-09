@@ -44,3 +44,32 @@ public class PostController {
         return new ResponseEntity<>("게시글이 성공적으로 수정되었습니다.", HttpStatus.OK);
     }
 }
+
+// import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class PostController {
+
+    private final PostRepository postRepository;
+
+    public PostController(PostRepository postRepository) {
+        this.postRepository = postRepository;
+    }
+
+    @PutMapping("/posts/{id}")
+    public Post updatePost(@PathVariable Long id, @RequestBody Post newPost) {
+        return postRepository.findById(id)
+            .map(post -> {
+                post.setTitle(newPost.getTitle());
+                post.setContent(newPost.getContent());
+                return postRepository.save(post);
+            })
+            .orElseGet(() -> {
+                newPost.setId(id);
+                return postRepository.save(newPost);
+            });
+    }
+}
