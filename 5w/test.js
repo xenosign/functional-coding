@@ -63,33 +63,6 @@ document.body.appendChild(starElement);
 // |이 코드는 기본적인 API 구현을 위한 충분한 기능을 제공하지만, 실제 프로덕션 환경에서는 보안, 검증, 에러 처리 등의 추가 기능을 고려해야 합니다.
 
 
-// 게시글 수정하는 express 코드.
-
-// express 모듈을 불러옴
-const express = require('express');
-
-// express 앱 생성
-const app = express();
-
-// 게시글 수정을 위한 PUT 요청 핸들러
-app.put('/posts/:id', (req, res) => {
-  // 요청 파라미터에서 게시글 id를 가져옴
-  const postId = req.params.id;
-
-  // 요청 바디에서 수정할 내용을 가져옴
-  const updatedContent = req.body.content;
-
-  // 게시글 수정 로직
-  // ...
-
-  // 수정된 게시글을 응답으로 보냄
-  res.send('게시글이 수정되었습니다.');
-});
-
-// 서버를 3000 포트에서 실행
-app.listen(3000, () => {
-  console.log('서버가 3000 포트에서 실행되었습니다.');
-});
 
 const express = require('express');
 const app = express();
